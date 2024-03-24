@@ -1,0 +1,17 @@
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaRepositorio.DataAccess\bin\Debug\net7.0\ProyectoSistemaRepositorio.DataAccess.deps.json
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaRepositorio.DataAccess\bin\Debug\net7.0\ProyectoSistemaRepositorio.DataAccess.runtimeconfig.json
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaRepositorio.DataAccess\bin\Debug\net7.0\ProyectoSistemaRepositorio.DataAccess.dll
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaRepositorio.DataAccess\bin\Debug\net7.0\ProyectoSistemaRepositorio.DataAccess.pdb
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaRepositorio.DataAccess\bin\Debug\net7.0\ProyectoSistemaTransporte.Entidades.dll
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaRepositorio.DataAccess\bin\Debug\net7.0\ProyectoSistemaTransporte.Entidades.pdb
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaRepositorio.DataAccess\obj\Debug\net7.0\ProyectoSistemaRepositorio.DataAccess.csproj.AssemblyReference.cache
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaRepositorio.DataAccess\obj\Debug\net7.0\ProyectoSistemaRepositorio.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaRepositorio.DataAccess\obj\Debug\net7.0\ProyectoSistemaRepositorio.DataAccess.AssemblyInfoInputs.cache
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaRepositorio.DataAccess\obj\Debug\net7.0\ProyectoSistemaRepositorio.DataAccess.AssemblyInfo.cs
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaRepositorio.DataAccess\obj\Debug\net7.0\ProyectoSistemaRepositorio.DataAccess.csproj.CoreCompileInputs.cache
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaRepositorio.DataAccess\obj\Debug\net7.0\ProyectoSistemaRepositorio.DataAccess.csproj.CopyComplete
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaRepositorio.DataAccess\obj\Debug\net7.0\ProyectoSistemaRepositorio.DataAccess.dll
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaRepositorio.DataAccess\obj\Debug\net7.0\refint\ProyectoSistemaRepositorio.DataAccess.dll
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaRepositorio.DataAccess\obj\Debug\net7.0\ProyectoSistemaRepositorio.DataAccess.pdb
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaRepositorio.DataAccess\obj\Debug\net7.0\ProyectoSistemaRepositorio.DataAccess.genruntimeconfig.cache
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaRepositorio.DataAccess\obj\Debug\net7.0\ref\ProyectoSistemaRepositorio.DataAccess.dll

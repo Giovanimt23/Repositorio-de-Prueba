@@ -1,0 +1,73 @@
+﻿@page "/tipovehiculo/lista"
+@using PoryectoSistemaTransporte.Shared.Response
+@inject HttpClient Http
+@attribute [Authorize]
+
+
+
+<h1>Listado Tipo Vehiculo</h1>
+<br />
+
+
+
+<div class="row mb-5 mt-4 justify-content-start align-items-baseline">
+    <div class="col-1">
+        <label class="form-label" for="filtro">Descripcion:</label>
+    </div>
+    <div class="col-8">
+        <div class="input-group ">
+            <input type="text" class="form-control" @bind-value="filtrodescripcion" id="filtrodescripcion" />
+            <span class="input-group-text " style="cursor: pointer" @onclick="() => filtrodescripcion = string.Empty"><i class="bi bi-file-x"></i></span>
+        </div>
+    </div>
+    <div class="col-sm">
+        <button type="button" class="btn btn-outline-success" @onclick="Cargar"><i class="bi bi-search"></i></button>
+    </div>
+</div>
+
+
+@if (tipovehiculo is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table table-bordered border border-success border-3 ">
+        <thead>
+            <tr class="table-success ">
+                <th style="text-align:center;">Id</th>
+                <th style="text-align:center;">Descripcion</th>
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in tipovehiculo)
+            {
+                <tr>
+                    <td style="text-align:center;">@item.Id</td>
+                    <td style="text-align:center;">@item.Descripcion</td>
+                   
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+@code {
+
+    public ICollection<TipoVehiculoDTOResponse>? tipovehiculo { get; set; }
+
+    private string? filtrodescripcion;
+    private async Task Cargar()
+    {
+        tipovehiculo = await Http.GetFromJsonAsync<ICollection<TipoVehiculoDTOResponse>>($"api/Tipovehiculo?Descripcion={filtrodescripcion}");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Cargar();
+    }
+}

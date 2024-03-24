@@ -1,0 +1,127 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = PoryectoSistemaTransporte.Client
+build_property.RootNamespace = PoryectoSistemaTransporte.Client
+build_property.ProjectDir = D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\Client\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\Client
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Pages/Auth/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aFxMb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Pages/Auth/Registro.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aFxSZWdpc3Ryby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Pages/ConductorCrear.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uZHVjdG9yQ3JlYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Pages/ConductorEditar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uZHVjdG9yRWRpdGFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Pages/ConductorLista.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uZHVjdG9yTGlzdGEucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Pages/MarcaCrear.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFyY2FDcmVhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Pages/MarcaEditar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFyY2FFZGl0YXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Pages/MarcaLista.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFyY2FMaXN0YS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Pages/ModeloListar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW9kZWxvTGlzdGFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Pages/RegistroVehicularCrear.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9WZWhpY3VsYXJDcmVhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Pages/RegistroVehicularListar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9WZWhpY3VsYXJMaXN0YXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Pages/TipoVehiculoListar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGlwb1ZlaGljdWxvTGlzdGFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Pages/VehiculoCrear.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVoaWN1bG9DcmVhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Pages/VehiculoEditar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVoaWN1bG9FZGl0YXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Pages/VehiculoLista.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVoaWN1bG9MaXN0YS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Shared/ModalBusquedaConductor.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1vZGFsQnVzcXVlZGFDb25kdWN0b3IucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Shared/ModalBusquedaVehiculo.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1vZGFsQnVzcXVlZGFWZWhpY3Vsby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Shared/PageNewEditConductor.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFBhZ2VOZXdFZGl0Q29uZHVjdG9yLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Shared/PageNewEditMarca.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFBhZ2VOZXdFZGl0TWFyY2EucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Shared/PageNewEditVehiculo.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFBhZ2VOZXdFZGl0VmVoaWN1bG8ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-1ztfifvi08
+
+[D:/2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR/Proyecto/PoryectoSistemaTransporte/Client/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-axqg2g9x9f

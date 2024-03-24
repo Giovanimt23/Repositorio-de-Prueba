@@ -1,0 +1,486 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Server\\PoryectoSistemaTransporte.Server.csproj": {}
+  },
+  "projects": {
+    "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\PoryectoSistemaTransporte.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\PoryectoSistemaTransporte.Client.csproj",
+        "projectName": "PoryectoSistemaTransporte.Client",
+        "projectPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\PoryectoSistemaTransporte.Client.csproj",
+        "packagesPath": "C:\\Users\\Giovani\\.nuget\\packages\\",
+        "outputPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Giovani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Shared\\PoryectoSistemaTransporte.Shared.csproj": {
+                "projectPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Shared\\PoryectoSistemaTransporte.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Blazored.SessionStorage": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "Blazored.Toast": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "CurrieTechnologies.Razor.SweetAlert2": {
+              "target": "Package",
+              "version": "[5.5.0, )"
+            },
+            "Microsoft.AspNetCore.Components.Authorization": {
+              "target": "Package",
+              "version": "[7.0.15, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.NET.ILLink.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.100-1.23211.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.100-1.23211.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.Sdk.WebAssembly.Pack": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )",
+              "autoReferenced": true
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.3.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaRepositorio.DataAccess\\ProyectoSistemaTransporte.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaRepositorio.DataAccess\\ProyectoSistemaTransporte.DataAccess.csproj",
+        "projectName": "ProyectoSistemaTransporte.DataAccess",
+        "projectPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaRepositorio.DataAccess\\ProyectoSistemaTransporte.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Giovani\\.nuget\\packages\\",
+        "outputPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaRepositorio.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Giovani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaTransporte.Entidades\\ProyectoSistemaTransporte.Entidades.csproj": {
+                "projectPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaTransporte.Entidades\\ProyectoSistemaTransporte.Entidades.csproj"
+              },
+              "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Shared\\PoryectoSistemaTransporte.Shared.csproj": {
+                "projectPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Shared\\PoryectoSistemaTransporte.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaTransporte.Entidades\\ProyectoSistemaTransporte.Entidades.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaTransporte.Entidades\\ProyectoSistemaTransporte.Entidades.csproj",
+        "projectName": "ProyectoSistemaTransporte.Entidades",
+        "projectPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaTransporte.Entidades\\ProyectoSistemaTransporte.Entidades.csproj",
+        "packagesPath": "C:\\Users\\Giovani\\.nuget\\packages\\",
+        "outputPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaTransporte.Entidades\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Giovani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaTransporte.Repositorio\\ProyectoSistemaTransporte.Repositorio.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaTransporte.Repositorio\\ProyectoSistemaTransporte.Repositorio.csproj",
+        "projectName": "ProyectoSistemaTransporte.Repositorio",
+        "projectPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaTransporte.Repositorio\\ProyectoSistemaTransporte.Repositorio.csproj",
+        "packagesPath": "C:\\Users\\Giovani\\.nuget\\packages\\",
+        "outputPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaTransporte.Repositorio\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Giovani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaRepositorio.DataAccess\\ProyectoSistemaTransporte.DataAccess.csproj": {
+                "projectPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaRepositorio.DataAccess\\ProyectoSistemaTransporte.DataAccess.csproj"
+              },
+              "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaTransporte.Entidades\\ProyectoSistemaTransporte.Entidades.csproj": {
+                "projectPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaTransporte.Entidades\\ProyectoSistemaTransporte.Entidades.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.35, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Server\\PoryectoSistemaTransporte.Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Server\\PoryectoSistemaTransporte.Server.csproj",
+        "projectName": "PoryectoSistemaTransporte.Server",
+        "projectPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Server\\PoryectoSistemaTransporte.Server.csproj",
+        "packagesPath": "C:\\Users\\Giovani\\.nuget\\packages\\",
+        "outputPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Server\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Giovani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\PoryectoSistemaTransporte.Client.csproj": {
+                "projectPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\PoryectoSistemaTransporte.Client.csproj"
+              },
+              "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaRepositorio.DataAccess\\ProyectoSistemaTransporte.DataAccess.csproj": {
+                "projectPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaRepositorio.DataAccess\\ProyectoSistemaTransporte.DataAccess.csproj"
+              },
+              "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaTransporte.Repositorio\\ProyectoSistemaTransporte.Repositorio.csproj": {
+                "projectPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\ProyectoSistemaTransporte.Repositorio\\ProyectoSistemaTransporte.Repositorio.csproj"
+              },
+              "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Shared\\PoryectoSistemaTransporte.Shared.csproj": {
+                "projectPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Shared\\PoryectoSistemaTransporte.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.15, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Shared\\PoryectoSistemaTransporte.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Shared\\PoryectoSistemaTransporte.Shared.csproj",
+        "projectName": "PoryectoSistemaTransporte.Shared",
+        "projectPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Shared\\PoryectoSistemaTransporte.Shared.csproj",
+        "packagesPath": "C:\\Users\\Giovani\\.nuget\\packages\\",
+        "outputPath": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Giovani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

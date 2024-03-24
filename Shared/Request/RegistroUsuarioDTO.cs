@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PoryectoSistemaTransporte.Shared.Request
+{
+    public class RegistroUsuarioDTO
+    {
+        [Required(ErrorMessage = Constantes.CampoRequerido)]
+        [Display(Name = "Nombre Completo")]
+        public string NombreCompleto { get; set; } = default!;
+
+        public DateTime FechaNacimiento { get; set; } = DateTime.Today.AddYears(-20);
+
+        [Required(ErrorMessage = Constantes.CampoRequerido)]
+        public string Direccion { get; set; } = default!;
+
+        [Required(ErrorMessage = Constantes.CampoRequerido)]
+        public string Telefono { get; set; } = default!;
+
+        [Required(ErrorMessage = Constantes.CampoRequerido)]
+        public string PreguntaSecreta { get; set; } = default!;
+
+        [Required(ErrorMessage = Constantes.CampoRequerido)]
+        public string RespuestaSecreta { get; set; } = default!;
+
+        [Required(ErrorMessage = Constantes.CampoRequerido)]
+        [Display(Name = "Nombre de Usuario")]
+        public string NombreUsuario { get; set; } = default!;
+
+        [EmailAddress]
+        public string Email { get; set; } = default!;
+
+        [Required(ErrorMessage = Constantes.CampoRequerido)]
+        public string Password { get; set; } = default!;
+
+        [Compare(nameof(Password), ErrorMessage = "Las claves no coinciden")]
+        public string ConfirmPassword { get; set; } = default!;
+    }
+}

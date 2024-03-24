@@ -1,0 +1,64 @@
+﻿@inherits LayoutComponentBase
+@using PoryectoSistemaTransporte.Client.Auth
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<Blazored.Toast.BlazoredToasts></Blazored.Toast.BlazoredToasts>
+<div class="page">
+    <div class="sidebar">
+        <div class="sidebar" style="background-image: linear-gradient(90deg, rgba(48,59,69,1) 0%, rgba(48,59,69,1) 33%, rgba(48,59,69,1) 100%) !important;">
+            <NavMenu />
+        </div>
+        
+    </div>
+
+    <main>
+      
+        <div class="top-row px-4" style="background-image: linear-gradient(90deg, rgba(48,59,69,1) 0%, rgba(48,59,69,1) 33%, rgba(48,59,69,1) 100%)  !important;">
+           
+            <AuthorizeView>
+                <Authorized>
+                    <NavLink class="navbar-text text-white ">
+
+                        <i class="bi bi-person-bounding-box  m-3"></i> @context.User.Identity!.Name
+                      
+                    </NavLink>
+                    <button class="btn btn-dark m-3" @onclick="CerrarSession"><i class="bi bi-arrow-right-square-fill m-3"></i>Salir</button>
+                </Authorized>
+                <NotAuthorized>
+                    <div class="nav-item px-3">
+                        <NavLink class="nav-link text-white " href="login" style="text-decoration: none; ">
+                            <span class="oi oi-list-rich" aria-hidden="true"> </span><i class="bi bi-fast-forward-circle-fill m-1"></i>Iniciar Sesion
+                        </NavLink>
+                    </div>
+                    <div class="nav-item px-3">
+                        <NavLink class="nav-link text-white" href="registro" style="text-decoration: none">
+                            <span class="oi oi-list-rich" aria-hidden="true"><i class="bi bi-person-plus"></i></span> Registrarse
+                        </NavLink>
+                    </div>
+                </NotAuthorized>
+            </AuthorizeView>
+
+
+
+
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+   
+    </main>
+</div>
+
+@code{
+    
+
+    private async Task CerrarSession()
+    {
+        var autorizacion = (AutenticacionService)AuthenticationStateProvider;
+        await autorizacion.Autenticar(null);
+        NavigationManager.NavigateTo("/", forceLoad: true);
+
+    }
+}

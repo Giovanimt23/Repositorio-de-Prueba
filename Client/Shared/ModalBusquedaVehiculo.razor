@@ -1,0 +1,91 @@
+﻿@using PoryectoSistemaTransporte.Shared.Request
+@using PoryectoSistemaTransporte.Shared.Response
+@inject HttpClient Http
+<h3>ModalVehiculo</h3>
+
+
+   
+    <div class="row mb-4">
+        <div class="col-4">
+            <label for="nombre" class="form-label">Placa</label>
+            <div class="input-group">
+            <input type="text" class="form-control" @bind-value="filtroplaca" id="filtroplaca"/>
+            <span class="input-group-text" style="cursor: pointer" @onclick="() => filtroplaca= string.Empty"><i class="bi bi-trash"></i></span>
+            </div>
+        </div>
+        <div class="col-sm">
+            <button type="button" class="btn btn-outline-primary" @onclick="Cargar"><i class="bi bi-search"></i></button>
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+        @if (Vehiculo is null)
+        {
+            <strong>Sin resultados para mostrar</strong>
+        }
+        else if (!Vehiculo.Any())
+        {
+            <p class="alert alert-info">No se encontraron registros</p>
+        }
+        else
+        {
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr class="table-primary">
+                        <th>#</th>
+                        <th>Color</th>
+                        <th>Numero De Asiento</th>
+                        <th class="text-center">Placa</th>
+                       
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Vehiculo)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Color</td>
+                            <td>@item.NumeroDAsiento</td>
+                            <td>@item.Placa</td>
+                        <td class="text-center">
+                            <input type="radio" class="form-switch" name="instructor"
+                                   id="@item.ForName" @onclick="() => { SeleccionaVehiculo(item); }" />
+                        </td>
+
+
+
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+
+@code {
+    
+
+    private ICollection<VehiculoDTOResponse>? Vehiculo { get; set; }
+
+    public string? filtroplaca { get; set; }
+
+    [Parameter]
+    public EventCallback<VehiculoDTOResponse> SeleccionVehiculo { get; set; }
+
+    private async Task Cargar()
+    {
+        Vehiculo = await Http.GetFromJsonAsync<ICollection<VehiculoDTOResponse>>($"api/Vehiculo?Placa={filtroplaca}");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Cargar();
+    }
+
+    private void SeleccionaVehiculo(VehiculoDTOResponse item)
+    {
+        SeleccionVehiculo.InvokeAsync(item);
+    }
+}

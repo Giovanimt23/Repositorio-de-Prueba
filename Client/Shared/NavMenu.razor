@@ -1,0 +1,96 @@
+﻿@using PoryectoSistemaTransporte.Client.Auth
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+
+
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">Sistema Transporte</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"><i class="bi bi-house-door-fill"></i></span> Home
+            </NavLink>
+        </div>
+       
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="tipovehiculo/lista">
+                <span class="oi oi-list-rich" aria-hidden="true"><i class="bi bi-ev-front-fill"></i></span> TipoVehiculo
+            </NavLink>
+        </div>
+        
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="marca/lista">
+                <span class="oi oi-list-rich" aria-hidden="true"><i class="bi bi-exclude"></i></span> Marca
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="modelo/lista">
+                <span class="oi oi-list-rich" aria-hidden="true"><i class="bi bi-fan"></i></span> Modelo
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="conductor/lista">
+                <span class="oi oi-list-rich" aria-hidden="true"><i class="bi bi-person-circle"></i></span> Conductor
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="vehiculo/lista">
+                <span class="oi oi-list-rich" aria-hidden="true"><i class="bi bi-car-front"></i></span> Vehiculo
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="registrovehicular/lista">
+                <span class="oi oi-list-rich" aria-hidden="true"><i class="bi bi-person-vcard"></i></span> Registro Vehicular
+            </NavLink>
+        </div>
+       <!-- <AuthorizeView>
+            <Authorized>
+                <NavLink class="navbar-text text-white">
+                    <i class="oi oi-person">@context.User.Identity!.Name</i>
+                </NavLink>
+                <button class="btn btn-outline-info" @onclick="CerrarSession"><i class="oi oi-fullscreen-exit me-1"></i>Salir</button>
+            </Authorized>
+            <NotAuthorized>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="login">
+                        <span class="oi oi-list-rich" aria-hidden="true"></span> Iniciar Sesion
+                    </NavLink>
+                </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="registro">
+                        <span class="oi oi-list-rich" aria-hidden="true"></span> Registrarse
+                    </NavLink>
+                </div>
+            </NotAuthorized>
+        </AuthorizeView>-->
+
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+   /* private async Task CerrarSession()
+    {
+        var autorizacion = (AutenticacionService)AuthenticationStateProvider;
+        await autorizacion.Autenticar(null);
+        NavigationManager.NavigateTo("/", forceLoad: true);
+
+    }*/
+}

@@ -1,0 +1,122 @@
+﻿@page "/conductor/lista"
+@using PoryectoSistemaTransporte.Shared.Response
+@using PoryectoSistemaTransporte.Shared
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@using CurrieTechnologies.Razor.SweetAlert2
+@inject SweetAlertService Swal
+@using Blazored.Toast.Services
+@inject IToastService ToastService
+@attribute [Authorize]
+
+
+<PageTitle>Weather forecast</PageTitle>
+
+<h1>Listado Conductor</h1>
+<br />
+<a class="btn btn-outline-success" href="conductor/crear"><i class="bi bi-plus-circle m-1"></i>Nuevo Conductor</a>
+<br />
+<br />
+
+@if (Conductor == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+    <table class="table table-bordered border border-success border-3 ">
+        <thead >
+            <tr class ="table-success" >
+                <th >Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Dni</th>
+                <th>Edad</th>
+                <th>Telefono</th>
+                <th>Direccion</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Conductor)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Nombre</td>
+                    <td>@item.Apellido</td>
+                    <td>@item.Dni</td>
+                    <td>@item.Edad</td>
+                    <td>@item.Telefono</td>
+                    <td>@item.Direccion</td>
+                    <td>
+                        <button class="btn btn-secondary" @onclick="() => Editar(item.Id)"><i class="bi bi-pencil-square"></i></button>
+                        <button class="btn btn-danger" @onclick="() => Eliminar(item.Id)"><i class="bi bi-trash3-fill"></i></button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private ICollection<ConductorDTOResponse>? Conductor { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Cargar();
+    }
+
+    private void Editar(int id)
+    {
+        NavigationManager.NavigateTo($"conductor/editar/{id}");
+    }
+
+    private async Task Cargar()
+    {
+        Conductor = await Http.GetFromJsonAsync<ICollection<ConductorDTOResponse>>("api/conductor");
+    }
+
+    private async Task Eliminar(int id)
+    {
+        //await Http.DeleteAsync($"api/Conductor/{id}");
+        //await Cargar();
+
+        var result = await Swal.FireAsync(new SweetAlertOptions
+            {
+                Title = "¿Deseas eliminar al Conductor?",
+                Icon = SweetAlertIcon.Question,
+                ShowCancelButton = true,
+                ConfirmButtonText = "Si",
+                CancelButtonText = "Por ahora no"
+            });
+
+        if (result.IsConfirmed)
+        {
+            try
+            {
+                var response = await Http.DeleteAsync($"api/Conductor/{id}");
+                response.EnsureSuccessStatusCode();
+
+                var responconductor = await response.Content.ReadFromJsonAsync<BaseResponseDTO>();
+
+                if (responconductor!.Exito == true)
+                {
+                    ToastService.ShowSuccess(responconductor.MensajeError!);
+                    //NavigationManager.NavigateTo("/", forceLoad: true);
+                    await Cargar();
+                }
+                else
+                {
+                    ToastService.ShowWarning(responconductor.MensajeError!);
+                }
+            }
+            catch (Exception ex)
+            {
+                ToastService.ShowWarning(ex.Message);
+            }
+
+        }
+    }
+
+}

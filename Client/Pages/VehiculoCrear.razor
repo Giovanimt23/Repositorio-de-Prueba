@@ -1,0 +1,81 @@
+﻿@page "/vehiculo/crear"
+@using PoryectoSistemaTransporte.Shared.Response
+@using PoryectoSistemaTransporte.Shared;
+@using PoryectoSistemaTransporte.Shared.Request
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@using Blazored.Toast.Services
+@inject IToastService ToastService
+@attribute [Authorize(Roles = Constantes.RolAdministrador)]
+
+
+
+@if (TipoVehiculos != null)
+{
+    <PageNewEditVehiculo Request="Request" OnGrabar="Grabar" 
+                           Marcas = "Marcas"
+                           Modelos ="Modelos"
+                           TipoVehiculos="TipoVehiculos"
+                         ></PageNewEditVehiculo>
+}
+else
+{
+    <p>Cargando...</p>
+}
+
+
+
+
+
+@code {
+    public VehiculoDTORequest Request { get; set; } = new();
+
+    public ICollection<MarcaDTOResponse>? Marcas { get; set; }
+
+    public ICollection<ModeloDTOResponse>? Modelos { get; set; }
+
+    public ICollection<TipoVehiculoDTOResponse>? TipoVehiculos { get; set; }
+
+    private async Task Grabar()
+    {
+        Request.UsuarioCreacion = "administrador";
+        Request.UsuarioModificacion = "administrador";
+
+        try
+        {
+            var response = await Http.PostAsJsonAsync("api/Vehiculo", Request);
+            response.EnsureSuccessStatusCode();
+
+            var responsevehiculo = await response.Content.ReadFromJsonAsync<BaseResponseDTO>();
+
+            if (responsevehiculo!.Exito == true)
+            {
+                ToastService.ShowSuccess(responsevehiculo.MensajeError!);
+                NavigationManager.NavigateTo("/vehiculo/lista");
+            }
+            else
+            {
+                ToastService.ShowWarning(responsevehiculo.MensajeError!);
+            }
+        }
+        catch(Exception ex)
+        {
+            ToastService.ShowWarning(ex.Message);
+        }
+
+
+    
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        //Marcas = await Http.GetFromJsonAsync<ICollection<MarcaDTOResponse>>("api/Marca");
+        //Modelos = await Http.GetFromJsonAsync<ICollection<ModeloDTO>>("api/Modelo");
+        TipoVehiculos = await Http.GetFromJsonAsync<ICollection<TipoVehiculoDTOResponse>>("api/TipoVehiculo");
+        Marcas = new List<MarcaDTOResponse>();
+        Modelos = new List<ModeloDTOResponse>();
+    }
+
+
+
+ 
+}

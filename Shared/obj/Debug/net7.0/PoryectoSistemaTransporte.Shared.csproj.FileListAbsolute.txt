@@ -1,0 +1,11 @@
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\Shared\bin\Debug\net7.0\PoryectoSistemaTransporte.Shared.deps.json
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\Shared\bin\Debug\net7.0\PoryectoSistemaTransporte.Shared.dll
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\Shared\bin\Debug\net7.0\PoryectoSistemaTransporte.Shared.pdb
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\Shared\obj\Debug\net7.0\PoryectoSistemaTransporte.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\Shared\obj\Debug\net7.0\PoryectoSistemaTransporte.Shared.AssemblyInfoInputs.cache
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\Shared\obj\Debug\net7.0\PoryectoSistemaTransporte.Shared.AssemblyInfo.cs
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\Shared\obj\Debug\net7.0\PoryectoSistemaTransporte.Shared.csproj.CoreCompileInputs.cache
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\Shared\obj\Debug\net7.0\PoryectoSistemaTransporte.Shared.dll
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\Shared\obj\Debug\net7.0\refint\PoryectoSistemaTransporte.Shared.dll
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\Shared\obj\Debug\net7.0\PoryectoSistemaTransporte.Shared.pdb
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\Shared\obj\Debug\net7.0\ref\PoryectoSistemaTransporte.Shared.dll

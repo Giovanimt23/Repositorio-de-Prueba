@@ -1,0 +1,175 @@
+﻿@page "/registrovehicular/crear"
+@using PoryectoSistemaTransporte.Shared
+@using PoryectoSistemaTransporte.Shared.Request
+@using PoryectoSistemaTransporte.Shared.Response
+@inject NavigationManager NavigationManager
+@inject HttpClient Http
+@using Blazored.Toast.Services
+@inject IToastService ToastService
+@attribute [Authorize]
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg mt-6">
+                <div class="card-header">
+                    <h3>Formulario Registro Vehicular</h3>
+                </div>
+                <div class="card-body">
+                    <EditForm Model="Request" OnValidSubmit="OnGrabar">
+                        <DataAnnotationsValidator />
+                        <div class="row ">
+                            <div class="col">
+                                <div class="mb-3 row">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="nombre" @bind-value="NombreConductor" />
+                                        <span class="input-group-text" style="cursor: pointer" data-bs-toggle="modal" data-bs-target="#ConductorModal">
+                                            <i class="bi bi-person-bounding-box"></i>
+                                        </span>
+                                        <ValidationMessage For="() => Request.ConductorId" />
+                                    </div>
+
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="instructor" class="form-label">Placa</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="vehiculo" @bind-value="PlacaVehiculo" />
+                                        <span class="input-group-text" style="cursor: pointer" data-bs-toggle="modal" data-bs-target="#VehiculoModal">
+                                            <i class="bi bi-tv"></i>
+                                        </span>
+                                        <ValidationMessage For="() => Request.VehiculoId" />
+                                    </div>
+
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="fecharegistro" class="form-label">Fecha Registro</label>
+                                    <input type="date" class="form-control" id="fecharegistro" @bind-value="Request.FechaRegistro" />
+
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="fechacaducidad" class="form-label">Fecha Caducidad</label>
+                                    <input type="date" class="form-control" id="fechacaducidad" @bind-value="Request.FechaCaducidad" />
+
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary"><i class="bi bi-floppy me-1"></i>Guardar</button>
+                        </div>
+                    </EditForm>
+
+                </div>
+           </div>
+       </div>
+   </div>
+</div> 
+
+<div class="modal fade" id="ConductorModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h3 class="modal-title fs-5">Buscar Conductor</h3>
+                <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body p-4">
+                <ModalBusquedaConductor SeleccionConductor="ConductorSeleccionado" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="VehiculoModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h3 class="modal-title fs-5">Buscar Vehiculo</h3>
+                <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body p-4">
+                <ModalBusquedaVehiculo SeleccionVehiculo="VehiculoSeleccionado" />
+            </div>
+
+        </div>
+    </div>
+</div>
+@code {
+
+
+    public RegistroVehicularDTORequest Request { get; set; } = new();
+
+    [Parameter]
+    public EventCallback<RegistroVehicularDTORequest> OnGuardar { get; set; }
+
+
+    private ConductorDTOResponse? SelecionadoConduc { get; set; }
+
+    private VehiculoDTOResponse? SelecionadoVehi { get; set; }
+
+
+    public string NombreConductor { get; set; } = string.Empty;
+
+
+
+    public string PlacaVehiculo { get; set; } = string.Empty;
+
+    private async Task OnGrabar()
+
+    {
+
+
+
+        Request.UsuarioCreacion = "administrador";
+        Request.UsuarioModificacion = "administrador";
+
+        if (SelecionadoConduc is not null)
+            Request.ConductorId = SelecionadoConduc.Id;
+
+        if (SelecionadoVehi is not null)
+            Request.VehiculoId = SelecionadoVehi.Id;
+
+
+        try
+        {
+            var response = await Http.PostAsJsonAsync("api/RegistroVehicular", Request);
+            response.EnsureSuccessStatusCode();
+
+            var responseregistro = await response.Content.ReadFromJsonAsync<BaseResponseDTO>();
+
+            if (responseregistro!.Exito == true)
+            {
+                ToastService.ShowSuccess(responseregistro.MensajeError!);
+                NavigationManager.NavigateTo("/registrovehicular/lista");
+            }
+            else
+            {
+                ToastService.ShowWarning(responseregistro.MensajeError!);
+            }
+        }
+        catch(Exception e)
+        {
+            ToastService.ShowWarning(e.Message);
+        }
+
+
+       
+    }
+
+
+
+
+    //Para el switch al selecionar
+    private void ConductorSeleccionado(ConductorDTOResponse ItemConductorModal)
+    {
+        NombreConductor = ItemConductorModal.Nombre + " " +  ItemConductorModal.Apellido;
+        Request.ConductorId = ItemConductorModal.Id;
+        SelecionadoConduc = ItemConductorModal;
+    }
+
+    private void VehiculoSeleccionado(VehiculoDTOResponse ItemVehiculoModal)
+    {
+        PlacaVehiculo = ItemVehiculoModal.Placa;
+        Request.VehiculoId = ItemVehiculoModal.Id;
+        SelecionadoVehi = ItemVehiculoModal;
+    }
+}

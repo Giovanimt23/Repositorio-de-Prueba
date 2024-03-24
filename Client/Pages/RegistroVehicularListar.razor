@@ -1,0 +1,164 @@
+﻿@page "/registrovehicular/lista"
+@using PoryectoSistemaTransporte.Shared.Response
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@using CurrieTechnologies.Razor.SweetAlert2
+@inject SweetAlertService Swal
+@using Blazored.Toast.Services
+@inject IToastService ToastService
+@attribute [Authorize]
+
+
+<PageTitle>Weather forecast</PageTitle>
+
+<h1>Listado Registro Vehicular</h1>
+<br />
+<a class="btn btn-outline-success" href="registrovehicular/crear"><i class="bi bi-plus-circle m-1"></i>Nuevo Registro</a>
+<br />
+<div class="row mb-5 mt-4 justify-content-start align-items-baseline">
+    <div class="col-1">
+        <label class="form-label" for="filtro">Dni:</label>
+    </div>
+    <div class="col-4">
+        <div class="input-group">
+            <input type="text" class="form-control" @bind-value="filtrodni" id="filtrodni" />
+            <span class="input-group-text" style="cursor: pointer" @onclick="() => filtrodni = string.Empty"><i class="bi bi-file-x"></i></span>
+        </div>
+    </div>
+    <div class="col-1">
+        <label class="form-label" for="filtro">Placa:</label>
+    </div>
+    <div class="col-4">
+        <div class="input-group">
+            <input type="text" class="form-control" @bind-value="filtroplaca" id="filtroplaca" />
+            <span class="input-group-text" style="cursor: pointer" @onclick="() => filtroplaca = string.Empty"><i class="bi bi-file-x"></i></span>
+        </div>
+    </div>
+    <div class="col-sm">
+        <button type="button" class="btn btn-outline-success" @onclick="Cargar"><i class="bi bi-search"></i></button>
+    </div>
+</div>
+
+<br />
+
+                                 
+@if (registrovehicular == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table table-bordered border border-success border-3 ">
+        <thead>
+            <tr class="table-success">
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Dni</th>
+                <th>Placa</th>
+                <th>Tipo Vehiculo</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>FechaCaducidad</th>
+                <th>FechaRegistro</th>
+                <th>Opciones</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in registrovehicular)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Conductor</td>
+                    <td>@item.ConductorApellido</td>
+                    <td>@item.ConductorDni</td>
+                    <td>@item.VehiculiPlaca</td>
+                    <td>@item.TipoVehiculiNombre</td>
+                    <td>@item.MarcaNombre</td>
+                    <td>@item.ModeloNombre</td>
+                    <td>@item.FechaCaducidad</td>
+                    <td>@item.FechaRegistro</td>
+                    
+                    <td>
+                  
+                            @if (string.IsNullOrWhiteSpace(item.UrlPdf))
+                            {
+                            <img src="assets/images/DescargaDocumentoPDF.jpg" class="card-img-top border-dark" alt="No hay Imagen" style="height:42px ; width:42px" />
+                            }
+                            else
+                            {
+                            <a target="_blank" href="@item.UrlPdf"><img src="assets/images/DescargaDocumentoPDF.jpg" class="card-img-top border-dark" alt="No hay Imagen" style="height:42px ; width:42px" /></a>
+                            <!--<img src="@item.UrlDocumento" class="card-img-top border-dark" alt="" style="height:42px ; width:42px" />-->
+                            }
+
+                 
+                        <button class="btn btn-danger m-1" @onclick="() => Eliminar(item.Id)"><i class="bi bi-trash3"></i></button>
+                    </td>
+                 
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    public ICollection<RegistroVehicularDTOResponse>? registrovehicular { get; set; }
+
+    public string? filtroplaca { get; set; } 
+    public string? filtrodni { get; set; } 
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Cargar();
+    }
+
+    private async Task Cargar()
+    {
+        //registrovehicular = await Http.GetFromJsonAsync<ICollection<RegistroVehicularDTOResponse>>($"api/RegistroVehicular");
+        registrovehicular = await Http.GetFromJsonAsync<ICollection<RegistroVehicularDTOResponse>>($"api/registrovehicular?Dni={filtrodni}&Placa={filtroplaca}");
+    }
+
+    private async Task Eliminar(int id)
+    {
+        //await Http.DeleteAsync($"api/RegistroVehicular/{id}");
+        //await Cargar();
+        var result = await Swal.FireAsync(new SweetAlertOptions
+            {
+                Title = "¿Deseas eliminar el Registro Vehicular?",
+                Icon = SweetAlertIcon.Question,
+                ShowCancelButton = true,
+                ConfirmButtonText = "Si",
+                CancelButtonText = "Por ahora no"
+            });
+
+        if (result.IsConfirmed)
+        {
+            try
+            {
+                var response = await Http.DeleteAsync($"api/RegistroVehicular/{id}");
+                response.EnsureSuccessStatusCode();
+
+                var responregistrovehicular = await response.Content.ReadFromJsonAsync<BaseResponseDTO>();
+
+                if (responregistrovehicular!.Exito == true)
+                {
+                    ToastService.ShowSuccess(responregistrovehicular.MensajeError!);
+                    //NavigationManager.NavigateTo("/", forceLoad: true);
+                    await Cargar();
+                }
+                else
+                {
+                    ToastService.ShowWarning(responregistrovehicular.MensajeError!);
+                }
+            }
+            catch (Exception ex)
+            {
+                ToastService.ShowWarning(ex.Message);
+            }
+
+        }
+    }
+
+
+}

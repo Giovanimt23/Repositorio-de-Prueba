@@ -1,0 +1,11 @@
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaTransporte.Entidades\bin\Debug\net7.0\ProyectoSistemaTransporte.Entidades.deps.json
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaTransporte.Entidades\bin\Debug\net7.0\ProyectoSistemaTransporte.Entidades.dll
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaTransporte.Entidades\bin\Debug\net7.0\ProyectoSistemaTransporte.Entidades.pdb
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaTransporte.Entidades\obj\Debug\net7.0\ProyectoSistemaTransporte.Entidades.GeneratedMSBuildEditorConfig.editorconfig
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaTransporte.Entidades\obj\Debug\net7.0\ProyectoSistemaTransporte.Entidades.AssemblyInfoInputs.cache
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaTransporte.Entidades\obj\Debug\net7.0\ProyectoSistemaTransporte.Entidades.AssemblyInfo.cs
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaTransporte.Entidades\obj\Debug\net7.0\ProyectoSistemaTransporte.Entidades.csproj.CoreCompileInputs.cache
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaTransporte.Entidades\obj\Debug\net7.0\ProyectoSistemaTransporte.Entidades.dll
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaTransporte.Entidades\obj\Debug\net7.0\refint\ProyectoSistemaTransporte.Entidades.dll
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaTransporte.Entidades\obj\Debug\net7.0\ProyectoSistemaTransporte.Entidades.pdb
+D:\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\Proyecto\PoryectoSistemaTransporte\ProyectoSistemaTransporte.Entidades\obj\Debug\net7.0\ref\ProyectoSistemaTransporte.Entidades.dll

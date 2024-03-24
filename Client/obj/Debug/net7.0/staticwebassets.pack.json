@@ -1,0 +1,249 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\obj\\Debug\\net7.0\\compressed\\vbynb9sqyh.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\obj\\Debug\\net7.0\\scopedcss\\bundle\\PoryectoSistemaTransporte.Client.styles.css",
+      "PackagePath": "staticwebassets\\PoryectoSistemaTransporte.Client.styles.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\assets\\images\\Card.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Card.png"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\assets\\images\\DescargaDocumentoPDF.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\DescargaDocumentoPDF.jpg"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\assets\\images\\logo.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\logo.jpg"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\assets\\images\\logo2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo2.png"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\assets\\images\\sinimagen.jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\sinimagen.jpeg"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\bootstrap\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\bootstrap\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "D:\\2024 Curso Aplicaciones Web ASP.NET CORE 7.0 BLAZOR\\Proyecto\\PoryectoSistemaTransporte\\Client\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.PoryectoSistemaTransporte.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.PoryectoSistemaTransporte.Client.props",
+      "PackagePath": "build\\PoryectoSistemaTransporte.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.PoryectoSistemaTransporte.Client.props",
+      "PackagePath": "buildMultiTargeting\\PoryectoSistemaTransporte.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.PoryectoSistemaTransporte.Client.props",
+      "PackagePath": "buildTransitive\\PoryectoSistemaTransporte.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

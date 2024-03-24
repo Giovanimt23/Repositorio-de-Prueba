@@ -1,0 +1,61 @@
+﻿@page "/conductor/editar/{Id:int}"
+@using PoryectoSistemaTransporte.Shared;
+@using PoryectoSistemaTransporte.Shared.Request
+@using PoryectoSistemaTransporte.Shared.Response
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@using Blazored.Toast.Services
+@inject IToastService ToastService
+@attribute [Authorize(Roles = Constantes.RolAdministrador)]
+
+<PageNewEditConductor Conductor="Registro" OnGrabar="Actualizar"></PageNewEditConductor>
+
+
+
+@code {
+    [Parameter]
+
+    public int Id { get; set; }
+
+    public ConductorDTORequest Registro { get; set; } = new();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var respuesta = await Http.GetFromJsonAsync<ConductorDTORequest>($"api/conductor/{Id}");
+        if(respuesta is not null)
+        {
+            Registro = respuesta;
+        }
+    }
+
+    private async Task Actualizar()
+    {
+
+        Registro.UsuarioModificacion = "administrador";
+        Registro.FechaModificacion = DateTime.Now;
+
+        try
+        {
+            var response = await Http.PutAsJsonAsync($"api/conductor/{Id}", Registro);
+            response.EnsureSuccessStatusCode();
+
+            var responseconductor = await response.Content.ReadFromJsonAsync<BaseResponseDTO>();
+            if (responseconductor!.Exito == true)
+            {
+                ToastService.ShowSuccess(responseconductor.MensajeError!);
+                NavigationManager.NavigateTo("/conductor/lista");
+            }
+            else
+            {
+                ToastService.ShowWarning(responseconductor.MensajeError!);
+            }
+        }
+        catch(Exception ex)
+        {
+            ToastService.ShowWarning(ex.Message);
+        }
+
+  
+       
+    }
+}

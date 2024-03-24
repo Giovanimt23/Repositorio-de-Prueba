@@ -1,0 +1,79 @@
+﻿@page "/marca/editar/{id:int}"
+@using PoryectoSistemaTransporte.Shared
+@using PoryectoSistemaTransporte.Shared.Request
+@using PoryectoSistemaTransporte.Shared.Response
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@using Blazored.Toast.Services
+@inject IToastService ToastService
+@attribute [Authorize(Roles = Constantes.RolAdministrador)]
+
+
+@if (Request.Id == 0)
+{
+    <p>Cargando....</p>
+}
+else
+{
+<PageNewEditMarca OnGrabar="Actualizar" TipoVehiculos="TipoVehiculos"
+                  Request="Request"></PageNewEditMarca>
+
+}
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    public MarcaDTORequest Request { get; set; } = new();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var response = await Http.GetFromJsonAsync<MarcaDTORequest>($"api/Marca/{Id}");
+        if (response != null)
+        {
+            Request = response;
+        }
+    }
+
+    public ICollection<TipoVehiculoDTOResponse>? TipoVehiculos { get; set; }
+
+    private async Task Actualizar()
+    {
+
+
+        Request.UsuarioModificacion = "administrador";
+        Request.FechaModificacion = DateTime.Now;
+
+        try
+        {
+            var response = await Http.PutAsJsonAsync($"api/Marca/{Id}", Request);
+            response.EnsureSuccessStatusCode();
+
+            var responsemarca= await response.Content.ReadFromJsonAsync<BaseResponseDTO>();
+
+            if (responsemarca!.Exito == true)
+            {
+                ToastService.ShowSuccess(responsemarca.MensajeError!);
+                NavigationManager.NavigateTo("marca/lista");
+            }
+            else
+            {
+                ToastService.ShowWarning(responsemarca.MensajeError!);
+            }
+        }
+        catch(Exception ex)
+        {
+            ToastService.ShowWarning(ex.Message);
+        }
+
+
+
+        
+ 
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+      TipoVehiculos = await Http.GetFromJsonAsync<ICollection<TipoVehiculoDTOResponse>>("api/TipoVehiculo");
+    }
+}

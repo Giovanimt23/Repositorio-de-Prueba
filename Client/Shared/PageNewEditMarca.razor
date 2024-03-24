@@ -1,0 +1,109 @@
+﻿@using PoryectoSistemaTransporte.Shared
+@using PoryectoSistemaTransporte.Shared.Request
+@using PoryectoSistemaTransporte.Shared.Response
+@inject NavigationManager NavigationManager
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg mt-6">
+                <div class="card-header">
+                    <h3>Formulario Marca</h3>
+                </div>
+                <div class="card-body">
+                    <EditForm Model="Request" OnValidSubmit="Grabar">
+                        <DataAnnotationsValidator />
+                        <div class="row ">
+                            <div class="col">
+                                <div class="mb-3 row">
+                                    <label class="form-label" for="descripcion">Descripcion:</label>
+                                    <input type="text" id="descripcion" class="form-control" @bind-value="Request.Descripcion" />
+                                    <ValidationMessage For="() => Request.Descripcion" />
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label class="form-label" for="modelo">Tipo Vehiculo:</label>
+                                    <InputSelect id="modelo" @bind-Value="Request.TipovehiculoId" class="form-select">
+                                        <option value="0">-Seleccione una TipoVehiculo-</option>
+                                        @foreach (var item in TipoVehiculos)
+                                        {
+                                            <option value="@item.Id">@item.Descripcion</option>
+                                        }
+                                    </InputSelect>
+                                    <ValidationMessage For="() => Request.TipovehiculoId" />
+                                </div>
+                            
+                                <div class="card">
+                                    <div class="card-body">
+                                        @if (Request.Base64Imagen is not null)
+                                        {
+                                            <div style="margin: 10px">
+                                                <img src="data:image/jpeg;base64, @Request.Base64Imagen" alt="@Request.Descripcion" style="width:300px" />
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <img src="@Request.UrlImagen" alt="@Request.Descripcion" style="width: 300px; display:block; margin:auto;" />
+                                        }
+                                    </div>
+                                    <div class="card-footer">
+                                        <InputFile accept="image/png, image/jpeg, image/webp" style="display: none"
+                                                   OnChange="OnFileUploaded" id="file" />
+                                        <label for="file" class="btn btn-secondary"><i class="bi bi-camera me-1"></i>IMAGEN</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row row-cols-md-4">
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-primary"><i class="bi bi-floppy me-1">Aceptar</i></button>
+                            </div>                          
+                            <div class="col-md-6 text-md-end">
+                                <button type="submit" class="btn btn-danger" @onclick="Cancelar"><i class="bi bi-x-circle me-1"></i>Cancelar</button>
+                            </div>
+                        </div>
+
+
+                    </EditForm>
+                </div>
+           </div>
+       </div>
+    </div>
+</div>
+
+
+@code {
+
+    [Parameter]
+    public MarcaDTORequest Request { get; set; } = new();
+
+    [Parameter]
+    public ICollection<TipoVehiculoDTOResponse> TipoVehiculos { get; set; } = new List<TipoVehiculoDTOResponse>();
+
+    [Parameter]
+    public EventCallback OnGrabar { get; set; }
+
+    private void Grabar()
+    {
+        OnGrabar.InvokeAsync();
+    }
+
+    private async Task OnFileUploaded(InputFileChangeEventArgs e)
+    {
+
+        var imagen = e.File;
+        var buffer = new byte[imagen.Size];
+        var _ = await imagen.OpenReadStream().ReadAsync(buffer); // Extrae el base64
+
+        Request.Base64Imagen = Convert.ToBase64String(buffer);
+        Request.NombreArchivo = imagen.Name;
+        Request.UrlImagen = null;
+
+    }
+
+    private void Cancelar()
+    {
+        NavigationManager.NavigateTo("/marca/lista");
+    }
+}

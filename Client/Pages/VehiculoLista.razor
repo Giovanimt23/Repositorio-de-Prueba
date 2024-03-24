@@ -1,0 +1,127 @@
+﻿@page "/vehiculo/lista"
+
+@using PoryectoSistemaTransporte.Shared.Response
+@using PoryectoSistemaTransporte.Shared
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@using CurrieTechnologies.Razor.SweetAlert2
+@inject SweetAlertService Swal
+@using Blazored.Toast.Services
+@inject IToastService ToastService
+@attribute [Authorize]
+
+
+
+
+<PageTitle>Weather forecast</PageTitle>
+
+<h1>Listado Vehiculo</h1>
+<br />
+<a class="btn btn-outline-success" href="vehiculo/crear"><i class="bi bi-plus-circle m-1"></i>Nuevo Vehiculo</a>
+<br />
+<br />
+@if (Vehiculo is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table table-bordered border border-success border-2 ">
+        <thead>
+            <tr class="table-success">
+                <th>Id</th>
+                <th>Color</th>
+                <th>Numero de Asiento</th>
+                <th>Placa</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>TipoVehiculo</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Vehiculo)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Color</td>
+                    <td>@item.NumeroDAsiento</td>
+                    <td>@item.Placa</td>
+                    <td>@item.Marca</td>
+                    <td>@item.Modelo</td>
+                    <td>@item.TipoVehiculo</td>
+                    <td>
+                        <button class="btn btn-secondary" @onclick="() => Editar(item.Id)"><i class="bi bi-pencil-square"></i></button>
+                        <button class="btn btn-danger" @onclick="() => Eliminar(item.Id)"><i class="bi bi-trash3-fill"></i></button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+
+    public ICollection<VehiculoDTOResponse>? Vehiculo { get; set; }
+
+    private async Task Cargar()
+    {
+        Vehiculo = await Http.GetFromJsonAsync<ICollection<VehiculoDTOResponse>>("api/Vehiculo");
+    }
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Cargar();
+    }
+
+    private void Editar(int id)
+    {
+        NavigationManager.NavigateTo($"Vehiculo/editar/{id}");
+    }
+
+
+    private async Task Eliminar(int id)
+    {
+        //await Http.DeleteAsync($"api/Vehiculo/{id}");
+       // await Cargar();
+       var result = await Swal.FireAsync(new SweetAlertOptions
+            {
+                Title = "¿Deseas eliminar el Vehiculo?",
+                Icon = SweetAlertIcon.Question,
+                ShowCancelButton = true,
+                ConfirmButtonText = "Si",
+                CancelButtonText = "Por ahora no"
+            });
+
+        if (result.IsConfirmed)
+       {
+            try
+            {
+                var response = await Http.DeleteAsync($"api/Vehiculo/{id}");
+                response.EnsureSuccessStatusCode();
+
+                var responsevehiculo = await response.Content.ReadFromJsonAsync<BaseResponseDTO>();
+
+                if (responsevehiculo!.Exito == true)
+                {
+                    ToastService.ShowSuccess(responsevehiculo.MensajeError!);
+                    //NavigationManager.NavigateTo("/", forceLoad: true);
+                    await Cargar();
+                }
+                else
+                {
+                    ToastService.ShowWarning(responsevehiculo.MensajeError!);
+                }
+            }
+            catch (Exception ex)
+            {
+                ToastService.ShowWarning(ex.Message);
+            }
+          
+      }
+    }
+
+   
+}

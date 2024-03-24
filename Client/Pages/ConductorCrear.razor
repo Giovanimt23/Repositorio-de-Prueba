@@ -1,0 +1,49 @@
+﻿@page "/conductor/crear"
+@using PoryectoSistemaTransporte.Shared;
+@using PoryectoSistemaTransporte.Shared.Request
+@using PoryectoSistemaTransporte.Shared.Response
+@inject HttpClient Http;
+@inject NavigationManager NavigationManager
+@using Blazored.Toast.Services
+@inject IToastService ToastService
+@attribute [Authorize(Roles = Constantes.RolAdministrador)]
+
+
+
+<PageNewEditConductor Conductor="Conductor" OnGrabar="Grabar"></PageNewEditConductor>
+
+
+
+
+@code {
+    public ConductorDTORequest Conductor { get; set; } = new ConductorDTORequest();
+
+    private async Task Grabar()
+    {
+        Conductor.UsuarioCreacion = "administrador";
+        Conductor.UsuarioModificacion = "administrador";
+
+        try
+        {
+            var response =  await Http.PostAsJsonAsync("api/conductor", Conductor);
+            response.EnsureSuccessStatusCode();
+
+            var responseconductor = await response.Content.ReadFromJsonAsync<BaseResponseDTO>();
+            if (responseconductor!.Exito == true)
+            {
+                ToastService.ShowSuccess(responseconductor.MensajeError!);
+                NavigationManager.NavigateTo("/conductor/lista");
+            }
+            else
+            {
+                ToastService.ShowWarning(responseconductor.MensajeError!);
+            }
+        }
+        catch(Exception ex)
+        {
+            ToastService.ShowWarning(ex.Message);
+        }
+
+
+    }
+}

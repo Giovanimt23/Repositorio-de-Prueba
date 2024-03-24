@@ -1,0 +1,72 @@
+﻿@page "/login"
+
+@using PoryectoSistemaTransporte.Client.Auth
+@using PoryectoSistemaTransporte.Shared.Request
+@using PoryectoSistemaTransporte.Shared.Response
+@inject HttpClient HttClient
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
+@using Blazored.Toast.Services
+@inject IToastService ToastService
+
+
+
+
+
+<div class="login-box">
+ 
+    <p>Login</p>
+    <img src="/assets/images/logo2.png" style="white: 200px; height:200px; display:block; margin:auto;" />
+    <EditForm Model="@Request" OnValidSubmit="ValidacionLogin">
+        <DataAnnotationsValidator />
+       
+        <div class="user-box">
+            <input type="text" id="usuario" required="" name="" @bind-value="Request.Usuario">
+            <label >Usuario</label>
+            <ValidationMessage For="() => Request.Usuario" />
+        </div>
+        <div class="user-box">
+            <input type="password" id="password" required="" name="" @bind-value="Request.Password">
+            <label >Clave</label>
+            <ValidationMessage For="() => Request.Password" />
+        </div>
+        
+        <div class="d-grid gap-1 mt-4 mb-0">
+            <button class="btn btn-primary" type="submit">Ingresar</button>
+        </div>
+    </EditForm>
+   
+</div>
+@code {
+
+    public LoginDTORequest Request {get; set;} = new();
+
+    private async Task ValidacionLogin()
+    {
+        try
+        {
+            var response = await HttClient.PostAsJsonAsync("api/Users/Login", Request);
+
+            response.EnsureSuccessStatusCode();
+
+            var autenticacion = (AutenticacionService)AuthenticationStateProvider;
+            var loginresponse = await response.Content.ReadFromJsonAsync<LoginDTOResponse>();
+
+          
+
+            if (loginresponse!.Exito == false)
+            {
+                ToastService.ShowWarning(loginresponse.MensajeError!);
+            }     
+            else
+            {
+                await autenticacion.Autenticar(loginresponse);
+                NavigationManager.NavigateTo("/");
+            }
+        }
+        catch(Exception ex)
+        {
+            ToastService.ShowError(ex.Message);
+        }
+    }
+}

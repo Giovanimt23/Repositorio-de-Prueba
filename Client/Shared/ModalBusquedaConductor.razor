@@ -1,0 +1,114 @@
+﻿@using PoryectoSistemaTransporte.Shared.Request
+@using PoryectoSistemaTransporte.Shared
+@using PoryectoSistemaTransporte.Shared.Response
+
+@inject HttpClient Http
+<h3>ModalConductor</h3>
+
+
+  
+    <div class="row mb-4">
+        <div class="col-4">
+            <label for="nombre" class="form-label">Nombres</label>
+            <div class="input-group">
+            <input type="text"  class="form-control" @bind-value="filtroapellido" id="filtroapellido"/>
+            <span class="input-group-text" style="cursor: pointer" @onclick="() => filtroapellido = string.Empty"><i class="bi bi-trash"></i></span>
+            </div>
+        </div>
+       
+        <div class="col-4">
+            <label for="nrodocumento" class="form-label">Nro Documento</label>
+            <div class="input-group">
+            <input type="text" class="form-control" @bind-value="filtrodni" id="filtrodni" />
+                <span class="input-group-text" style="cursor: pointer" @onclick="() => filtrodni = string.Empty"><i class="bi bi-trash"></i></span>
+        </div>
+        </div>
+        <div class="col-sm">
+            <button type="button" class="btn btn-outline-primary" @onclick="Cargar"><i class="bi bi-search"></i></button>
+        </div>
+
+     
+    </div>
+    <div class="row mt-3">
+        @if (Conductores is null)
+        {
+            <strong>Sin resultados para mostrar</strong>
+        }
+        else if (!Conductores.Any())
+        {
+            <p class="alert alert-info">No se encontraron registros</p>
+        }
+        else
+        {
+            <table class="table table-hover table-bordered">
+                <thead>
+                <tr class="table-primary">
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th class="text-center">Dni</th>
+                    <th class="text-center">Edad</th>
+                    <th class="text-center">Telefono</th>
+                    <th class="text-center">Direccion</th>
+                    <th>&nbsp;</th>
+                </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Conductores)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Nombre</td>
+                        <td>@item.Apellido</td>
+                        <td>@item.Dni</td>
+                        <td>@item.Edad</td>
+                            <td>@item.Telefono</td>
+                        <td>@item.Direccion</td>
+                        <td class="text-center">
+                           <input type="radio" class="form-switch" name="instructor"
+                                   id="@item.ForName" @onclick="() => { SeleccionaConductor(item); }" />
+                        </td>
+                   
+                        
+                   
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
+    </div>
+
+@code {
+
+
+    private ICollection<ConductorDTOResponse>? Conductores { get; set; }
+
+    public string? filtroapellido { get; set; }
+
+    public string? filtrodni { get; set; }
+
+
+    [Parameter]
+    public EventCallback<ConductorDTOResponse> SeleccionConductor { get; set; }
+
+
+    /*private ICollection<ConductorDTO>? Conductores { get; set; }*/
+
+    private async Task Cargar()
+    {
+        Conductores = await Http.GetFromJsonAsync<ICollection<ConductorDTOResponse>>($"api/Conductor?Apellido={filtroapellido}&Dni={filtrodni}");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Cargar();
+    }
+
+
+
+
+    private void SeleccionaConductor(ConductorDTOResponse item)
+    {
+        SeleccionConductor.InvokeAsync(item);
+    }
+}

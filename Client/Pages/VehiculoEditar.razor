@@ -1,0 +1,95 @@
+﻿@page "/vehiculo/editar/{id:int}"
+@using PoryectoSistemaTransporte.Shared
+@using PoryectoSistemaTransporte.Shared.Request
+@using PoryectoSistemaTransporte.Shared.Response
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@using Blazored.Toast.Services
+@inject IToastService ToastService
+@attribute [Authorize(Roles = Constantes.RolAdministrador)]
+
+@if (Request.Id == 0)
+{
+    <p>Cargando....</p>
+}
+else
+{
+    <PageNewEditVehiculo OnGrabar="Actualizar"
+                      Modelos="Modelos"
+                      Marcas="Marcas"
+                      TipoVehiculos ="TipoVehiculos"
+                      Request="Request"
+                      />
+}
+
+@code {
+
+    [Parameter]
+    public int Id { get; set; }
+
+    public VehiculoDTORequest Request { get; set; } = new();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var response = await Http.GetFromJsonAsync<VehiculoDTORequest>($"api/Vehiculo/{Id}");
+        if (response != null)
+        {
+            Request = response;
+
+            TipoVehiculos = await Http.GetFromJsonAsync<ICollection<TipoVehiculoDTOResponse>>("api/TipoVehiculo");
+            Marcas = await Http.GetFromJsonAsync<ICollection<MarcaDTOResponse>>($"api/Marca?idtipovehiculo={Request.TipoVehiculoId}");
+            Modelos = await Http.GetFromJsonAsync<ICollection<ModeloDTOResponse>>($"api/Modelo/simple?idmarca={Request.MarcaId}");
+        }
+    }
+
+    private async Task Actualizar()
+    {
+
+        Request.UsuarioModificacion = "administrador";
+        Request.FechaModificacion = DateTime.Now;
+
+        try
+        {
+            var response = await Http.PutAsJsonAsync($"api/Vehiculo/{Id}", Request);
+            response.EnsureSuccessStatusCode();
+
+            var responsevehiculo = await response.Content.ReadFromJsonAsync<BaseResponseDTO>();
+
+            if (responsevehiculo!.Exito == true)
+            {
+                ToastService.ShowSuccess(responsevehiculo.MensajeError!);
+                NavigationManager.NavigateTo("vehiculo/lista");
+            }
+            else
+            {
+                ToastService.ShowWarning(responsevehiculo.MensajeError!);
+            }
+        }
+        catch (Exception ex)
+        {
+            ToastService.ShowWarning(ex.Message);
+        }
+
+    }
+
+
+    public ICollection<MarcaDTOResponse>? Marcas { get; set; }
+
+    public ICollection<ModeloDTOResponse>? Modelos { get; set; }
+    public ICollection<TipoVehiculoDTOResponse>? TipoVehiculos { get; set; }
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        
+        
+        //TipoVehiculos = await Http.GetFromJsonAsync<ICollection<TipoVehiculoDTO>>("api/TipoVehiculo");
+        //Marcas = await Http.GetFromJsonAsync<ICollection<MarcaDTOResponse>>($"api/Marca?idtipovehiculo={Request.TipoVehiculoId}");
+        //Modelos = await Http.GetFromJsonAsync<ICollection<ModeloDTOResponse>>($"api/Modelo?idmarca={Request.MarcaId}");
+        
+
+    }
+
+
+}

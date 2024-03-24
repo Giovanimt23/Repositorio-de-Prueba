@@ -1,0 +1,172 @@
+﻿@using PoryectoSistemaTransporte.Shared
+@using PoryectoSistemaTransporte.Shared.Request
+@using PoryectoSistemaTransporte.Shared.Response
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg mt-6">
+                <div class="card-header">
+                    <h3>Formulario Vehiculo</h3>
+                </div>
+                <div class="card-body">
+
+                    <EditForm Model="Request" OnValidSubmit="Grabar">
+                        <DataAnnotationsValidator />
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3 row">
+                                    <label class="form-label" for="color">Color:</label>
+                                    <input type="text" id="color" class="form-control" @bind-value="Request.Color">
+                                    <ValidationMessage For="() => Request.Color" />
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label class="form-label" for="NumeroDAsiento">Numero De Asiento:</label>
+                                    <input type="text" id="NumeroDAsiento" class="form-control" @bind-value="Request.NumeroDAsiento" />
+                                    <ValidationMessage For="() => Request.NumeroDAsiento" />
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label class="form-label" for="placa">Placa:</label>
+                                    <input type="text" id="placa" class="form-control" @bind-value="Request.Placa" />
+                                    <ValidationMessage For="() => Request.Placa" />
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <label class="form-label" for="estado">Estado</label>
+                                    <InputSelect id="estado" @bind-Value="Request.Estado" class="form-select">
+                                        <option value="0">--Seleccione una estado--</option>
+
+                                        <option value="true">Habilitado</option>
+                                        <option value="false">No Habilitado</option>
+
+                                    </InputSelect>
+
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="form-label" for="tipovehiculo">TipoVehiculo:</label>
+                                    <InputSelect id="tipovehiculo" class="form-select" @bind-Value="Request.TipoVehiculoId" @oninput="OnTipoVehiculoSelected">
+                                        <option value="0">-Seleccione una Tipo Vehiculo-</option>
+                                        @foreach (var item in TipoVehiculos)
+                                        {
+                                            <option value="@item.Id">@item.Descripcion</option>
+                                        }
+                                    </InputSelect>
+                                    <ValidationMessage For="() => Request.TipoVehiculoId" />
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="form-label" for="marca">Marcas:</label>
+                                    <InputSelect id="marca" class="form-select" @bind-Value="Request.MarcaId" @oninput="OnMarcaSelected">
+                                        <option value="0">-Seleccione una Marca-</option>
+                                        @foreach (var item in Marcas)
+                                        {
+                                            <option value="@item.Id">@item.Descripcion</option>
+                                        }
+                                    </InputSelect>
+                                    <ValidationMessage For="() => Request.MarcaId" />
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="form-label" for="modelo">Modelo:</label>
+                                    <InputSelect id="modelo" @bind-Value="Request.ModeloId" class="form-select">
+                                        <option value="0">-Seleccione una Modelo-</option>
+                                        @foreach (var item in Modelos)
+                                        {
+                                            <option value="@item.Id">@item.Descripcion</option>
+                                        }
+                                    </InputSelect>
+                                    <ValidationMessage For="() => Request.ModeloId" />
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                      <div class="row row-cols-md-4">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-primary ">Aceptar</button>
+                        </div>
+
+                         <div class="col-md-6 text-md-end">
+                            <button type="submit" class="btn btn-danger" @onclick="Cancelar"><i class="bi bi-x-circle me-1"></i>Cancelar</button>
+                        </div>
+                    </div>
+                    </EditForm>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public VehiculoDTORequest Request { get; set; } = new();
+
+    [Parameter]
+    public ICollection<MarcaDTOResponse> Marcas { get; set; } = new List<MarcaDTOResponse>();
+
+    [Parameter]
+    public ICollection<ModeloDTOResponse> Modelos { get; set; } = new List<ModeloDTOResponse>();
+    [Parameter]
+    public ICollection<TipoVehiculoDTOResponse> TipoVehiculos { get; set; } = new List<TipoVehiculoDTOResponse>();
+
+    [Parameter]
+    public EventCallback OnGrabar { get; set; }
+
+    private void Grabar()
+    {
+        OnGrabar.InvokeAsync();
+    }
+
+
+    private int IdTipoVehiculo { get; set; }
+    private int IdMarca{ get; set; }
+
+
+
+
+    private async Task OnTipoVehiculoSelected(ChangeEventArgs args)
+    {
+        var codtp = args.Value!.ToString()!;
+        if (codtp != "0" && !codtp.StartsWith("-"))
+        {
+            IdTipoVehiculo = Convert.ToInt32(codtp);
+            Marcas = await Http.GetFromJsonAsync<ICollection<MarcaDTOResponse>>($"api/marca?idtipovehiculo={IdTipoVehiculo}");
+            Modelos = new List<ModeloDTOResponse>();
+
+            Request.TipoVehiculoId = Convert.ToInt32(codtp);
+        }
+        else
+        {
+            Marcas = new List<MarcaDTOResponse>();
+            Modelos = new List<ModeloDTOResponse>();
+
+        }
+    }
+
+    private async Task OnMarcaSelected(ChangeEventArgs args)
+    {
+        var codm = args.Value!.ToString()!;
+        if (codm != "0" && !codm.StartsWith("-"))
+        {
+            IdMarca = Convert.ToInt32(codm);
+            Modelos = await Http.GetFromJsonAsync<ICollection<ModeloDTOResponse>>($"api/Modelo/simple?idmarca={IdMarca}");
+            Request.MarcaId = Convert.ToInt32(codm);
+        }
+        else
+        {
+            Modelos = new List<ModeloDTOResponse>();
+        }
+    }
+
+    private void Cancelar()
+    {
+       NavigationManager.NavigateTo("/vehiculo/lista");
+       
+    }
+
+}

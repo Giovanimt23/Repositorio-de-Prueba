@@ -1,0 +1,96 @@
+﻿@using PoryectoSistemaTransporte.Shared.Request
+@using PoryectoSistemaTransporte.Shared
+@inject NavigationManager NavigationManager
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg mt-6">
+                <div class="card-header">
+                    <h3>Formulario Conductor</h3>
+                </div>
+                <div class="card-body">
+
+                    <EditForm Model="Conductor" OnValidSubmit="Grabar">
+                        <DataAnnotationsValidator />
+                        <div class="row ">
+                            <div class="col">
+                                <div class=" mb-3 row">
+                                    <label class="form-label" for="nombre">Nombre</label>
+                                    <input type="text" id="nombre" class="form-control" @bind-value="Conductor.Nombre" />
+                                    <ValidationMessage For="() => Conductor.Nombre" />
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="form-label" for="apellido">Apellido</label>
+                                    <input type="text" id="apellido" class="form-control" @bind-value="Conductor.Apellido" />
+                                    <ValidationMessage For="() => Conductor.Apellido" />
+                                </div>
+                          
+                                <div class="mb-3 row">
+                                    <label class="form-label" for="dni">Dni</label>
+                                    <input type="text" id="dni" class="form-control" @bind-value="Conductor.Dni" />
+                                    <ValidationMessage For="() => Conductor.Dni" />
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="form-label" for="edad">Edad</label>
+                                    <input type="text" id="edad" class="form-control" @bind-value="Conductor.Edad" />
+                                    <ValidationMessage For="() => Conductor.Edad" />
+                                </div>
+                          
+                                <div class="mb-3 row">
+                                    <label class="form-label" for="telefono">Telefono</label>
+                                    <input type="text" id="telefono" class="form-control" @bind-value="Conductor.Telefono" />
+                                    <ValidationMessage For="() => Conductor.Telefono" />
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="form-label" for="direccion">Direccion</label>
+                                    <input type="text" id="direccion" class="form-control " @bind-value="Conductor.Direccion" />
+                                    <ValidationMessage For="() => Conductor.Direccion" />
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="form-label" for="estado">Estado</label>
+                                    <InputSelect id="estado" @bind-Value="Conductor.Estado" class="form-select">
+                                        <option value="0">--Seleccione una estado--</option>
+
+                                        <option value="true">Habilitado</option>
+                                        <option value="false">No Habilitado</option>
+
+                                    </InputSelect>
+
+                                </div>
+                            </div>
+                        </div>
+                     <div class="row row-cols-md-4">
+                        <div class="col-md-6">
+                                <button type="submit" class="btn btn-primary"><i class="bi bi-box-arrow-in-up-right me-1"></i>Aceptar</button>
+                        </div>
+                            <div class="col-md-6 text-md-end">
+                            <button type="submit" class="btn btn-danger" @onclick="Cancelar"><i class="bi bi-x-circle me-1"></i>Cancelar</button>
+                        </div>
+                    </div>
+                    </EditForm>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+
+    [Parameter]
+    public ConductorDTORequest Conductor { get; set; } = new ConductorDTORequest();
+
+    [Parameter]
+    public EventCallback OnGrabar{ get; set; }
+
+    private void Grabar()
+    {
+        OnGrabar.InvokeAsync();
+    }
+
+    private void Cancelar()
+    {
+        NavigationManager.NavigateTo("/conductor/lista");
+
+    }
+}

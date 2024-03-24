@@ -1,0 +1,127 @@
+﻿@page "/marca/lista"
+@using PoryectoSistemaTransporte.Shared.Response
+@using PoryectoSistemaTransporte.Shared
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@using CurrieTechnologies.Razor.SweetAlert2
+@inject SweetAlertService Swal
+@using Blazored.Toast.Services
+@inject IToastService ToastService
+@attribute [Authorize]
+
+
+<PageTitle>Weather forecast</PageTitle>
+
+<h1>Listado Marca</h1>
+<br />
+<a class="btn btn-outline-success" href="marca/crear"><i class="bi bi-plus-circle m-1"></i>Nueva Marca</a>
+<br />
+<br />
+@if (marca is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table table-bordered border border-success border-3  ">
+        <thead>
+            <tr class="table-success">
+                <th style="text-align:center;">Id</th>
+                <th style="text-align:center;">Nombre</th>
+                <th style="text-align:center;">Tipo Vehiculo</th>
+                <th style="text-align:center;">Imagen</th>
+                <th style="text-align:center;">Opciones</th>
+ 
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in marca)
+            {
+                <tr>
+                    <td style="text-align:center;">@item.Id</td>
+                    <td style="text-align:center;">@item.Descripcion</td>
+                    <td style="text-align:center; ">@item.TipoVehiculo</td>
+                    <td style ="text-align:center;">
+                        @if (string.IsNullOrWhiteSpace(@item.UrlImagen))
+                        {
+                            <img src="assets/images/sinimagen.jpeg" class="card-img-top border-dark" alt="No hay imagen" style="height: 80px; width: 100px;" />
+                        }
+                        else
+                        {
+                            <img src="@item.UrlImagen" class="card-img-top border-dark" alt="@item.UrlImagen" style="height: 80px; width: 100px;" />
+                        }
+                    </td>
+                    <td style="text-align:center;">
+                        <button class="btn btn-secondary" @onclick="() => Editar(item.Id)"><i class="bi bi-pencil-square"></i></button>
+                        <button class="btn btn-danger" @onclick="() => Eliminar(item.Id)"><i class="bi bi-trash3-fill"></i></button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+@code {
+        public ICollection<MarcaDTOResponse>? marca { get; set; }
+
+        private async Task Cargar()
+        {
+            marca = await Http.GetFromJsonAsync<ICollection<MarcaDTOResponse>>("api/Marca");
+        }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Cargar();
+    }
+
+    private void Editar(int id)
+    {
+        NavigationManager.NavigateTo($"Marca/editar/{id}");
+    }
+
+
+    private async Task Eliminar(int id)
+    {
+        //await Http.DeleteAsync($"api/Marca/{id}");
+        //await Cargar();
+        var result = await Swal.FireAsync(new SweetAlertOptions
+            {
+                Title = "¿Deseas eliminar la Marca?",
+                Icon = SweetAlertIcon.Question,
+                ShowCancelButton = true,
+                ConfirmButtonText = "Si",
+                CancelButtonText = "Por ahora no"
+            });
+
+        if (result.IsConfirmed)
+        {
+            try
+            {
+                var response = await Http.DeleteAsync($"api/Marca/{id}");
+                response.EnsureSuccessStatusCode();
+
+                var responmarca = await response.Content.ReadFromJsonAsync<BaseResponseDTO>();
+
+                if (responmarca!.Exito == true)
+                {
+                    ToastService.ShowSuccess(responmarca.MensajeError!);
+                    //NavigationManager.NavigateTo("/", forceLoad: true);
+                    await Cargar();
+                }
+                else
+                {
+                    ToastService.ShowWarning(responmarca.MensajeError!);
+                }
+            }
+            catch (Exception ex)
+            {
+                ToastService.ShowWarning(ex.Message);
+            }
+
+        }
+    }
+
+
+}
